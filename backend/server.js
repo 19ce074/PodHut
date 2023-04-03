@@ -9,7 +9,14 @@ const cookieParser = require('cookie-parser');
 const path = require("path");
 
 const ACTIONS = require('./actions');
+app.use(cors({
 
+    credentials: true,
+
+    origin: ["http://www.codersvoice.xyz", "https://www.codersvoice.xyz", "http://localhost:3000", "http://localhost:5500", "http://localhost", "https://localhost"],
+    methods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
+
+}))
 const io = require('socket.io')(server, {
     cors: {
         origin: process.env.FRONT_URL,
@@ -24,6 +31,9 @@ const corsOption = {
 };
 app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
+
+
+
 
 const PORT = process.env.PORT || 5500;
 DbConnect();
