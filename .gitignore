@@ -1,4 +1,4 @@
 node_modules
 /frontend/build
-/backend/.env
-/backend/.env.dev
+/home/vivek/Projects/podhut/backend/.env
+/home/vivek/Projects/podhut/backend/.env.dev
