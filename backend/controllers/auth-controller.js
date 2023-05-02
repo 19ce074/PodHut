@@ -6,7 +6,7 @@ const UserDto = require('../dtos/user-dto');
 
 class AuthController {
     async sendOtp(req, res) {
-        const { phone } = req.body;
+       const { phone } = req.body;
         if (!phone) {
             res.status(400).json({ message: 'Phone field is required!' });
         }
@@ -21,7 +21,7 @@ class AuthController {
 
         // send OTP
         try {
-            await otpService.sendBySms(phone, otp);
+            //await otpService.sendBySms(phone, otp);
             res.json({
                 hash: `${hash}.${expires}`,
                 phone,
